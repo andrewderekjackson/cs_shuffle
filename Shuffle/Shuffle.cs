@@ -77,7 +77,7 @@ namespace Shuffle {
 
         public static IDisposable Subscribe(this Pipeline pipeline, WorkerQueue worker) {
             var targets = string.Join(", ", pipeline.TargetModules.Select(v => v.Name));
-            Console.WriteLine($"{pipeline.Name} => {targets}");
+            Console.WriteLine($" * {pipeline.Name} => {targets}");
 
             return pipeline
                 .Source

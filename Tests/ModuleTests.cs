@@ -23,8 +23,8 @@ namespace Tests {
             Module sourceModule = new Module {
                 Path = @"C:\Module2"
             };
-            sourceModule.NuGetPackageNames.Add("Package1");
-            sourceModule.NuGetPackageNames.Add("Package2");
+            sourceModule.Provides.Add("Package1");
+            sourceModule.Provides.Add("Package2");
 
 
             Module targetModule = new Module {
@@ -43,8 +43,8 @@ namespace Tests {
             Module sourceModule = new Module {
                 Path = @"C:\Module2"
             };
-            sourceModule.NuGetPackageNames.Add("Package1");
-            sourceModule.NuGetPackageNames.Add("Package2");
+            sourceModule.Provides.Add("Package1");
+            sourceModule.Provides.Add("Package2");
 
 
             TfsModule targetModule = new TfsModule {
@@ -63,8 +63,8 @@ namespace Tests {
             Module sourceModule = new Module {
                 Path = @"C:\Module2"
             };
-            sourceModule.NuGetPackageNames.Add("Package1");
-            sourceModule.NuGetPackageNames.Add("Package2");
+            sourceModule.Provides.Add("Package1");
+            sourceModule.Provides.Add("Package2");
             
             Target target = new Target("ExpertShare", @"c:\ExpertShare");
             
@@ -84,8 +84,8 @@ namespace Tests {
             Module targetModule = new Module {
                 Path = @"C:\Module1"
             };
-            targetModule.NuGetPackageNames.Add("Package1");
-            targetModule.NuGetPackageNames.Add("Package2");
+            targetModule.Provides.Add("Package1");
+            targetModule.Provides.Add("Package2");
 
             var paths = sourceModule.GetTargetPaths(targetModule).ToList();
             Assert.IsTrue(paths.Contains(@"\Dependencies"));

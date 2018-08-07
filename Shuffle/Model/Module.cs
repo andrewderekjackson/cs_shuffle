@@ -11,13 +11,13 @@ namespace Shuffle {
     /// </summary>
     public class Module : PipelineObject {
 
-        [YamlIgnore]
         public string BinPath => System.IO.Path.Combine(Path, @"Bin\Module");
 
-        [YamlMember(Order = 4, Alias = "packages", ApplyNamingConventions = false)]
-        public IList<string> NuGetPackageNames { get; set; } = new List<string>();
+        public IList<string> Requires { get; set; } = new List<string>();
 
-        [YamlMember(Order = 3, Alias = "type", ApplyNamingConventions = false)]
+
+        public IList<string> Provides { get; set; } = new List<string>();
+
         public override string YamlType {
             get {
                 return "module";
@@ -36,7 +36,7 @@ namespace Shuffle {
             }
 
             // copy into each of the nuget folders provided by the module.
-            foreach (var path in NuGetPackageNames) {
+            foreach (var path in Provides) {
                 yield return $@"packages\{path}\lib";
             }
 
