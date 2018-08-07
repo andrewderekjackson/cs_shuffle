@@ -1,2 +1,5 @@
 Shuffle/bin/
 Shuffle/obj/
+/packages
+/Tests/obj/Debug
+/Tests/bin/Debug
