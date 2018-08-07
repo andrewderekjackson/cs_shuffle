@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using YamlDotNet.Serialization;
 
 namespace Shuffle {
     /// <summary>
@@ -12,9 +11,6 @@ namespace Shuffle {
             Name = name;
             Path = path;
         }
-
-        [YamlMember(Order = 3, Alias = "type", ApplyNamingConventions = false)]
-        public override string YamlType => "target";
 
 
         public override IEnumerable<string> GetTargetPaths(PipelineObject target) {

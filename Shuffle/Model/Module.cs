@@ -18,12 +18,6 @@ namespace Shuffle {
 
         public IList<string> Provides { get; set; } = new List<string>();
 
-        public override string YamlType {
-            get {
-                return "module";
-            }
-        }
-
         /// <summary>
         /// Gets the relative paths where the files for the source module will be placed in the target module.
         /// </summary>

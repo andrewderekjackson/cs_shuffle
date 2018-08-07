@@ -1,12 +1,7 @@
 ﻿using System.Collections.Generic;
-using YamlDotNet.Serialization;
 
 namespace Shuffle {
     public class TfsModule : Module {
-       
-        [YamlMember(Order = 3, Alias = "type", ApplyNamingConventions = false)]
-        public override string YamlType => "tfs_module";
-
         /// <summary>
         /// Gets the relative paths where the files for the source module will be placed in the target module.
         /// </summary>
